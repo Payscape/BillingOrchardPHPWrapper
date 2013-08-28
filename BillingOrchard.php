@@ -37,92 +37,52 @@ class BillingOrchard {
 	//
 
 	public function ViewUsers($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['UserID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewUsers',$data);
+		$encoded = $this->encode('ViewUsers',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewClients($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['ClientID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewClients',$data);
+		$encoded = $this->encode('ViewClients',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewHourlyServices($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['ItemID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewHourlyServices',$data);
+		$encoded = $this->encode('ViewHourlyServices',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewInvoices($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['Invoice'] = $incoming;
-		}
-		$encoded = $this->encode('ViewInvoices',$data);
+		$encoded = $this->encode('ViewInvoices',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewPayments($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['PaymentID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewPayments',$data);
+		$encoded = $this->encode('ViewPayments',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewBilledMisc($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['BMID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewBilledMisc',$data);
+		$encoded = $this->encode('ViewBilledMisc',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewMiscItems($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['MiscID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewMiscItems',$data);
+		$encoded = $this->encode('ViewMiscItems',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewBilledHourly($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['BHID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewBilledHourly',$data);
+		$encoded = $this->encode('ViewBilledHourly',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewSubscribers($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['CID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewSubscribers',$data);
+		$encoded = $this->encode('ViewSubscribers',$incoming);
 		return $this->send($encoded);  
 	}
 
 	public function ViewRecurringBilling($incoming=null){
-		$data = array();
-		if($incoming != ''){
-			$data['RBID'] = $incoming;
-		}
-		$encoded = $this->encode('ViewRecurringBilling',$data);
+		$encoded = $this->encode('ViewRecurringBilling',$incoming);
 		return $this->send($encoded);  
 	}
 
@@ -140,7 +100,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateClients',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -154,7 +116,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateHourlyServices',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -168,7 +132,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateInvoices',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -182,7 +148,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateBilledMisc',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -196,7 +164,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateMiscItems',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -210,7 +180,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateBilledHourly',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -224,7 +196,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateSubscribers',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 	
@@ -238,7 +212,9 @@ class BillingOrchard {
 			$encoded = $this->encode('UpdateRecurringBilling',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -305,7 +281,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddClients',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -320,7 +298,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddHourlyServices',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -346,7 +326,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddInvoices',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -363,7 +345,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddPayments',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -385,7 +369,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddBilledMisc',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -400,7 +386,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddMiscItems',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -422,7 +410,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddBilledHourly',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -442,7 +432,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddSubscribers',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -465,7 +457,9 @@ class BillingOrchard {
 			$encoded = $this->encode('AddRecurringBilling',$data);
 			return $this->send($encoded);          
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
@@ -475,71 +469,78 @@ class BillingOrchard {
 
 	public function DeleteClients($incoming=null){
 		if($incoming != ''){
-			$data['ClientID'] = $incoming;
-			$encoded = $this->encode('DeleteClients',$data);
+			$encoded = $this->encode('DeleteClients',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
 	public function DeleteHourlyServices($incoming=null){
 		if($incoming != ''){
-			$data['ItemID'] = $incoming;
-			$encoded = $this->encode('DeleteHourlyServices',$data);
+			$encoded = $this->encode('DeleteHourlyServices',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
 	public function DeleteInvoices($incoming=null){
 		if($incoming != ''){
-			$data['Invoice'] = $incoming;
-			$encoded = $this->encode('DeleteInvoices',$data);
+			$encoded = $this->encode('DeleteInvoices',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
 	public function DeleteBilledMisc($incoming=null){
 		if($incoming != ''){
-			$data['BMID'] = $incoming;
-			$encoded = $this->encode('DeleteBilledMisc',$data);
+			$encoded = $this->encode('DeleteBilledMisc',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
 	public function DeleteMiscItems($incoming=null){
 		if($incoming != ''){
-			$data['MiscID'] = $incoming;
-			$encoded = $this->encode('DeleteMiscItems',$data);
+			$encoded = $this->encode('DeleteMiscItems',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
 	public function DeleteBilledHourly($incoming=null){
 		if($incoming != ''){
-			$data['BHID'] = $incoming;
-			$encoded = $this->encode('DeleteBilledHourly',$data);
+			$encoded = $this->encode('DeleteBilledHourly',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 
 	public function DeleteRecurringBilling($incoming=null){
 		if($incoming != ''){
-			$data['RBID'] = $incoming;
-			$encoded = $this->encode('DeleteRecurringBilling',$data);
+			$encoded = $this->encode('DeleteRecurringBilling',$incoming);
 			return $this->send($encoded); 
 		} else {
-			return 'Missing Required Values';
+		    $response['Message'] = 'Missing Required Values';
+		    $response['error'] = 1;
+			return $response;
 		}
 	}
 }
