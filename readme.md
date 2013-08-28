@@ -14,9 +14,12 @@ Allows for exchanges with all relevent database tables through Add, Update, View
 
 ## Version History ##
 
-.1 - Initial Version
-.2 - Changed Edit to Update
-	 View and Delete no longer require primary field definition, can pass ID only
+.1 - 
+Initial Version
+
+.2 - 
+Changed Edit to Update.
+View and Delete no longer require primary field definition, can pass ID only
 
 ## Features ##
 
@@ -164,7 +167,7 @@ AddClients Success:
 Array
 ( 
 	[Message] => success 
-	[ID] => 186740 
+	[ID] => 12345 
 	[Response_code] => 0 
 ) 
 ```
